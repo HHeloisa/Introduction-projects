@@ -1,0 +1,23 @@
+.color {
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+
+}
+.black {
+  background-color: black;
+}
+.purple {
+  background-color: rgb(107, 6, 107);
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.gray {
+  background-color: gray;
+}
