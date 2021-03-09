@@ -8,20 +8,7 @@
   display: inline-block;
 
 }
-.black {
-  background-color: black;
-}
-.purple {
-  background-color: rgb(107, 6, 107);
-}
 
-.yellow {
-  background-color: yellow;
-}
-
-.gray {
-  background-color: gray;
-}
 .pixel {
   background-color: white;
   border-width: 1px;
