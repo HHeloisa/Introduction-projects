@@ -2,8 +2,9 @@
   border-width: 1px;
   border-color: black;
   border-style: solid;
-  width: 100px;
-  height: 100px;
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
   display: inline-block;
 
 }
@@ -20,4 +21,14 @@
 
 .gray {
   background-color: gray;
+}
+.pixel {
+  background-color: white;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  margin: -2px
 }
