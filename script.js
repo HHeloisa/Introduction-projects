@@ -18,6 +18,7 @@ function paytingColorPaddles() {
   colorsPaddles[3].style.backgroundColor = 'yellow';
 }
 paytingColorPaddles();
+
 // Requisito 4 criar boxdepixel 5x5
 function creatingPixelPaintingBoard() {
   const newDiv = document.createElement('div');
@@ -36,13 +37,13 @@ function creatingPixelPaintingBoard() {
 }
 creatingPixelPaintingBoard();
 
-// Estabelecendo a cor preta como selecionada
+// Requisito 6 - Estabelecendo a cor preta como selecionada
 function blackColor() {
   document.getElementsByClassName('color')[0].classList.add('selected');
 }
 blackColor();
 
-/* // Requisito 7 - Murilo Gonçalves contribuiu na resolução, principalmente através da explicação do (e)
+// Requisito 7 - Murilo Gonçalves contribuiu na resolução, principalmente através da explicação do (e)
 function classChange() {
   const elementColors = document.getElementById('color-palette');
   elementColors.addEventListener('click', function (e) {
@@ -52,15 +53,15 @@ function classChange() {
     colorElement.classList.add('selected');
   });
 }
-classChange(); */
+classChange();
 
 /* // Requisito 8
-function clickColor() {
+function pintPixel() {
   let selectBoard = document.getElementById('pixel-board');
   selectedBoard.addEventListener('click', function(e)) {
     let pixel = e.target;
-    let colorSelected = document.querySelector('selected').style.backgroundColor;
+    let colorSelected = document.querySelector('.selected').style.backgroundColor;
     pixel.style.backgroundColor = colorSelected;
   }
 }
-clickColor(); */
+pintPixel(); */
