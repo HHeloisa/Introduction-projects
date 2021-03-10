@@ -21,16 +21,16 @@ paytingColorPaddles();
 // Requisito 4 criar boxdepixel 5x5
 function creatingPixelPaintingBoard() {
   const newDiv = document.createElement('div');
-  const teste = document.getElementById('board').appendChild(newDiv);
-  console.log(teste);
+  document.getElementById('board').appendChild(newDiv);
   newDiv.id = 'pixel-board';
   for (let index = 1; index <= 5; index += 1) {
-    const createdLine = document.createElement('div');
-    document.getElementById('pixel-board').appendChild(createdLine);
+    const createdComunNew = document.createElement('div');
+    createdComunNew.classList = 'column';
+    document.getElementById('pixel-board').appendChild(createdComunNew);
     for (let indexA = 1; indexA <= 5; indexA += 1) {
-      const createdColumn = document.createElement('div');
-      createdLine.appendChild(createdColumn);
-      createdColumn.classList = 'pixel';
+      const createdLine = document.createElement('div');
+      createdComunNew.appendChild(createdLine);
+      createdLine.classList = 'pixel';
     }
   }
 }
