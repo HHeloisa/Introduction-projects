@@ -24,13 +24,14 @@ function creatingPixelPaintingBoard() {
   const newDiv = document.createElement('div');
   document.getElementById('board').appendChild(newDiv);
   newDiv.id = 'pixel-board';
-  for (let index = 1; index <= 5; index += 1) {
-    const createdComunNew = document.createElement('div');
-    createdComunNew.classList = 'column';
-    document.getElementById('pixel-board').appendChild(createdComunNew);
-    for (let indexA = 1; indexA <= 5; indexA += 1) {
+  let size = 5;
+  for (let index = 1; index <= size; index += 1) {
+    const createdColumun = document.createElement('div');
+    createdColumun.classList = 'column';
+    document.getElementById('pixel-board').appendChild(createdColumun);
+    for (let indexA = 1; indexA <= size; indexA += 1) {
       const createdLine = document.createElement('div');
-      createdComunNew.appendChild(createdLine);
+      createdColumun.appendChild(createdLine);
       createdLine.classList = 'pixel';
     }
   }
@@ -55,7 +56,9 @@ function classChange() {
 }
 classChange();
 
+let teste = document.getElementsByClassName
 /* // Requisito 8
+
 function pintPixel() {
   let selectBoard = document.getElementById('pixel-board');
   selectedBoard.addEventListener('click', function(e)) {
