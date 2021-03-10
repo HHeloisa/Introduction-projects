@@ -1,10 +1,10 @@
 // Requisito 2- Criando paleta de cores
 function creatingColorPaddles() {
   for (let index = 0; index < 4; index += 1) {
-    const creatingColorPaddles = document.createElement('div');
-    document.getElementById('color-palette').appendChild(creatingColorPaddles)
+    const creatColorPaddles = document.createElement('div');
+    document.getElementById('color-palette').appendChild(creatColorPaddles)
       .style.listStyle = 'none';
-    creatingColorPaddles.className = 'color';
+    creatColorPaddles.classList = 'color';
   }
 }
 creatingColorPaddles();
@@ -18,15 +18,15 @@ function paytingColorPaddles() {
   colorsPaddles[3].style.backgroundColor = 'yellow';
 }
 paytingColorPaddles();
-
 // Requisito 4 criar boxdepixel 5x5
 function creatingPixelPaintingBoard() {
   const newDiv = document.createElement('div');
-  document.body.appendChild(newDiv);
+  const teste = document.getElementById('board').appendChild(newDiv);
+  console.log(teste);
   newDiv.id = 'pixel-board';
   for (let index = 1; index <= 5; index += 1) {
     const createdLine = document.createElement('div');
-    document.querySelector('div').appendChild(createdLine);
+    document.getElementById('pixel-board').appendChild(createdLine);
     for (let indexA = 1; indexA <= 5; indexA += 1) {
       const createdColumn = document.createElement('div');
       createdLine.appendChild(createdColumn);
@@ -42,7 +42,7 @@ function blackColor() {
 }
 blackColor();
 
-// Requisito 7 - Murilo Gonçalves contribuiu na resolução, principalmente através da explicação do (e)
+/* // Requisito 7 - Murilo Gonçalves contribuiu na resolução, principalmente através da explicação do (e)
 function classChange() {
   const elementColors = document.getElementById('color-palette');
   elementColors.addEventListener('click', function (e) {
@@ -52,7 +52,7 @@ function classChange() {
     colorElement.classList.add('selected');
   });
 }
-classChange();
+classChange(); */
 
 /* // Requisito 8
 function clickColor() {
