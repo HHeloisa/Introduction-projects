@@ -24,7 +24,7 @@ function creatingPixelPaintingBoard() {
   const newDiv = document.createElement('div');
   document.getElementById('board').appendChild(newDiv);
   newDiv.id = 'pixel-board';
-  let size = 5;
+  const size = 5;
   for (let index = 1; index <= size; index += 1) {
     const createdColumun = document.createElement('div');
     createdColumun.classList = 'column';
@@ -44,7 +44,7 @@ function blackColor() {
 }
 blackColor();
 
-// Requisito 7 - Murilo Gonçalves contribuiu na resolução, principalmente através da explicação do (e)
+// Requisito 7 - Realizado em conjunto com colegas, um grupo de ajuda mutua. Aprendemos juntos, em especial, ao Murilo Gonçalves que explicou a utilização do (e).
 function classChange() {
   const elementColors = document.getElementById('color-palette');
   elementColors.addEventListener('click', function (e) {
@@ -56,15 +56,15 @@ function classChange() {
 }
 classChange();
 
-let teste = document.getElementsByClassName
-/* // Requisito 8
-
-function pintPixel() {
-  let selectBoard = document.getElementById('pixel-board');
-  selectedBoard.addEventListener('click', function(e)) {
-    let pixel = e.target;
-    let colorSelected = document.querySelector('.selected').style.backgroundColor;
-    pixel.style.backgroundColor = colorSelected;
-  }
+// Requisito 8 - Realizado em conjunto com colegas, um grupo de ajuda mutua. Aprendemos juntos, em especial, ao Murilo Gonçalves que explicou a utilização do (e).
+function paintPixel() {
+  const paintBoard = document.querySelector('#pixel-board');
+  paintBoard.addEventListener('click', function (e) {
+    const pixel = e.target;
+    if (pixel.className === 'pixel') {
+      const colorSelected = document.querySelector('.selected').style.backgroundColor;
+      pixel.style.backgroundColor = colorSelected;
+    }
+  });
 }
-pintPixel(); */
+paintPixel();
