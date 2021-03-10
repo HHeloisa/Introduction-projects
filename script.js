@@ -41,7 +41,31 @@ function blackColor() {
   document.getElementsByClassName('color')[0].classList.add('selected');
 }
 blackColor();
-//  function (clicked) {
+
+// Requisito 7 - Murilo Gonçalves contribui, principalmente pela explicação do (e)
+function classChange() {
+  let elementColors = document.getElementById('color-palette');
+  elementColors.addEventListener('click', function(e) {
+    let colorElement = e.target;
+    let selectedElement = document.querySelector('.selected')
+    selectedElement.classList.remove('selected');
+    colorElement.classList.add('selected');
+  })
+}
+classChange();
+
+// Tornando as paletas de cores clicaveis
+// let clickColor = document.querySelectorAll('.color');
+// clickColor.addEventListner('click', 'selectedColor');
+
+// Estabelecendo função de cor selecionada
+// function selectedColor(eventoDeOrigem) {
+// remove a cor anterior selecionada
+// document.getElementsByClassName('selected').classList.remove('selected');
+// adiciona seleção a cor clicada target(evento de origem)
+//
+//}
+
 // remover a classe "selected"
 // add a classe selected
 // document.getElementsByClassName(corSelecionada).classList.add('selected');
