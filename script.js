@@ -19,11 +19,11 @@ function paytingColorPaddles() {
 }
 paytingColorPaddles();
 
-// Requisito 4 criar boxdepixel //
+// Requisito 4 criar boxdepixel 5x5
 function creatingPixelPaintingBoard() {
-  const bigBox = document.createElement('div');
-  document.body.appendChild(bigBox);
-  bigBox.id = 'pixel-board';
+  const newDiv = document.createElement('div');
+  document.body.appendChild(newDiv);
+  newDiv.id = 'pixel-board';
   for (let index = 1; index <= 5; index += 1) {
     const createdLine = document.createElement('div');
     document.querySelector('div').appendChild(createdLine);
@@ -42,30 +42,25 @@ function blackColor() {
 }
 blackColor();
 
-// Requisito 7 - Murilo Gonçalves contribui, principalmente pela explicação do (e)
+// Requisito 7 - Murilo Gonçalves contribuiu na resolução, principalmente através da explicação do (e)
 function classChange() {
-  let elementColors = document.getElementById('color-palette');
-  elementColors.addEventListener('click', function(e) {
-    let colorElement = e.target;
-    let selectedElement = document.querySelector('.selected')
+  const elementColors = document.getElementById('color-palette');
+  elementColors.addEventListener('click', function (e) {
+    const colorElement = e.target;
+    const selectedElement = document.querySelector('.selected');
     selectedElement.classList.remove('selected');
     colorElement.classList.add('selected');
-  })
+  });
 }
 classChange();
 
-// Tornando as paletas de cores clicaveis
-// let clickColor = document.querySelectorAll('.color');
-// clickColor.addEventListner('click', 'selectedColor');
-
-// Estabelecendo função de cor selecionada
-// function selectedColor(eventoDeOrigem) {
-// remove a cor anterior selecionada
-// document.getElementsByClassName('selected').classList.remove('selected');
-// adiciona seleção a cor clicada target(evento de origem)
-//
-//}
-
-// remover a classe "selected"
-// add a classe selected
-// document.getElementsByClassName(corSelecionada).classList.add('selected');
+/* // Requisito 8
+function clickColor() {
+  let selectBoard = document.getElementById('pixel-board');
+  selectedBoard.addEventListener('click', function(e)) {
+    let pixel = e.target;
+    let colorSelected = document.querySelector('selected').style.backgroundColor;
+    pixel.style.backgroundColor = colorSelected;
+  }
+}
+clickColor(); */
