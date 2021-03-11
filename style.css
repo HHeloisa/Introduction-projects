@@ -9,3 +9,7 @@ h1 {
   text-align: center;
   width: 500px;
 }
+
+#lista-tarefas {
+  list-style: none;
+}
