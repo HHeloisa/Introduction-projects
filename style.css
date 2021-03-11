@@ -21,9 +21,14 @@
   border-style: solid;
   width: 40px;
   height: 40px;
-  margin: -2px;
+  margin: 0;
+  display: inline-block;
 }
 
 .column {
-  display: inline-block;
+  margin: -4px;
+}
+
+.board {
+;
 }
