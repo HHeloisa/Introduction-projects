@@ -1,3 +1,10 @@
 h1 {
-  color: blue;
+  font-size: 80px;
+  font-family: monospace;
+  text-align: center;
+  color: gray;
+}
+
+#funcionamento {
+  text-align: center;
 }
