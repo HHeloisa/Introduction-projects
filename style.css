@@ -11,9 +11,10 @@ h1 {
 }
 
 #lista-tarefas {
-
+  list-style: none;
+  width: 500px;
 }
 
 .selected {
-  background-color: rgb (128, 128, 128);
+  background-color: rgb(128, 128, 128);
 }

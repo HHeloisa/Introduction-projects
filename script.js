@@ -2,10 +2,9 @@
 const buutoom = document.getElementById('criar-tarefa');
 // Adicionando o eventListener ao botão
 buutoom.addEventListener('click', addTask);
-// Cria variavel que cria nova linha
-
 
 function addTask() {
+  // Cria variavel que cria nova linha
   const newTask = document.createElement('li');
   // captura o conteudo do imput
   const inputContent = document.getElementById('texto-tarefa').value;
@@ -19,22 +18,22 @@ function addTask() {
   document.getElementById('texto-tarefa').value = '';
 }
 
-/* // Requisito 7
 function selectedTask() {
+  // adicona a uma variavel toda ol
   const listeningToOl = document.getElementById('lista-tarefas');
-  listeningToOl.addEventListener('click', (e => {
+  // adiciona ouvidor a toda ol
+  listeningToOl.addEventListener('click', function (e) {
+    // adiciona a variavel os elementos li
+    const liGroup = document.getElementsByTagName('li');
+    // for que vai rodar os li
+    for (let index = 0; index < liGroup.length; index += 1) {
+      // passar por cada li e remove a classe selecionada
+      liGroup[index].classList.remove('selected');
+    }
+    // adiciona a variavel a origem do evento
     const listeningToLi = e.target;
-    const selectedElement = document.getElementsByClassName('selected');
-
-    listeningToLi.classList = 'selected';
-    listeningToLi.style.backgroundColor = 'rgb(128, 128, 128)'
-  }));
+    // adiciona a origem do evento a classe "selected"
+    listeningToLi.className = 'selected';
+  });
 }
-selectedTask(); */
-
-/* const colorElement = e.target;
-const selectedElement = document.querySelector('.selected');
-selectedElement.classList.remove('selected');
-colorElement.classList.add('selected');
-});
-} */
+selectedTask();
