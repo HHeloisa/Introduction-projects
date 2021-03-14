@@ -32,7 +32,7 @@ function selectedTask() {
     // adiciona a variavel a origem do evento
     const getClassSelected = e.target;
     // adiciona a origem do evento a classe "selected"
-    getClassSelected.className = 'selected';
+    getClassSelected.classList.add('selected');
   });
 }
 selectedTask();
