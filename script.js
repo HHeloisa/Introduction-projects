@@ -1,7 +1,10 @@
+// Optei por deixar a explicação de cada codigo pra prestar bastante atenção e marcar pra aprender
 // Inserindo o botão em uma variável
 const buutoom = document.getElementById('criar-tarefa');
 // Adicionando o eventListener ao botão
 buutoom.addEventListener('click', addTask);
+// adicona a uma variavel toda ol
+const listeningToOl = document.getElementById('lista-tarefas');
 
 function addTask() {
   // Cria variavel que cria nova linha
@@ -10,8 +13,6 @@ function addTask() {
   const inputContent = document.getElementById('texto-tarefa').value;
   // adiciona a nova linha o conteudo do imput
   newTask.textContent = inputContent;
-  // adiciona classe a nova linha
-  newTask.classList.add = 'task';
   // adiciona a ol a nova linha
   document.querySelector('#lista-tarefas').appendChild(newTask);
   // limpa o imput
@@ -19,8 +20,6 @@ function addTask() {
 }
 
 function selectedTask() {
-  // adicona a uma variavel toda ol
-  const listeningToOl = document.getElementById('lista-tarefas');
   // adiciona ouvidor a toda ol
   listeningToOl.addEventListener('click', function (e) {
     // adiciona a variavel os elementos li
@@ -31,9 +30,22 @@ function selectedTask() {
       liGroup[index].classList.remove('selected');
     }
     // adiciona a variavel a origem do evento
-    const listeningToLi = e.target;
+    const getClassSelected = e.target;
     // adiciona a origem do evento a classe "selected"
-    listeningToLi.className = 'selected';
+    getClassSelected.className = 'selected';
   });
 }
 selectedTask();
+
+function completedTask() {
+  const allLi = document.querySelector('#lista-tarefas');
+  allLi.addEventListener('dblclick', (e) => {
+    const getClassCompleted = e.target;
+    if (getClassCompleted.classList.contains('completed')) {
+      getClassCompleted.classList.remove('completed');
+    } else {
+      getClassCompleted.classList.add('completed');
+    }
+  });
+}
+completedTask();
