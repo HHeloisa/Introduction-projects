@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+body {
+  background-color: #E8E1EF;
+}
+
+header {
+  background-color: #50C9CE;
+  padding: 25px;
+  font-family: monospace;
+}
+
+#clear-board {
+  font-size: 25px;
+  font-family: monospace;
+  margin-bottom: 25px;
+}
 .color {
   border-width: 1px;
   border-color: black;
@@ -27,4 +42,10 @@
 
 .column {
   margin: -4px;
+}
+
+#board {
+  background-color: #50C9CE;
+  padding: 50px;
+  border-style: solid;
 }

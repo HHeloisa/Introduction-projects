@@ -1,3 +1,4 @@
+let size = 5;
 // Requisito 2- Criando paleta de cores
 function creatingColorPaddles() {
   for (let index = 0; index < 4; index += 1) {
@@ -24,7 +25,6 @@ function creatingPixelPaintingBoard() {
   const newDiv = document.createElement('div');
   document.getElementById('board').appendChild(newDiv);
   newDiv.id = 'pixel-board';
-  const size = 5;
   for (let index = 1; index <= size; index += 1) {
     const createdColumun = document.createElement('div');
     createdColumun.classList = 'column';
@@ -70,8 +70,8 @@ function paintPixel() {
 paintPixel();
 
 // Requisito 9 - Criar botão para limpar quadro
-const buttom = document.querySelector('#clear-board');
-buttom.addEventListener('click', clearBoard);
+const buttomClean = document.querySelector('#clear-board');
+buttomClean.addEventListener('click', clearBoard);
 
 function clearBoard() {
   const pixel = document.querySelectorAll('.pixel');
