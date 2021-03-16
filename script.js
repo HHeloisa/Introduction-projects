@@ -69,3 +69,14 @@ function paintPixel() {
 }
 paintPixel();
 
+// Requisito 9 - Criar botão para limpar quadro
+const buttom = document.querySelector('#clear-board');
+buttom.addEventListener('click', clearBoard);
+
+function clearBoard() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+}
+clearBoard();
