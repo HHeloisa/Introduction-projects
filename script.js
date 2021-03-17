@@ -13,6 +13,7 @@ function addTask() {
   const inputContent = document.getElementById('texto-tarefa').value;
   // adiciona a nova linha o conteudo do imput
   newTask.textContent = inputContent;
+  newTask.classList.add('task');
   // adiciona a ol a nova linha
   document.querySelector('#lista-tarefas').appendChild(newTask);
   // limpa o imput
@@ -49,3 +50,14 @@ function completedTask() {
   });
 }
 completedTask();
+
+const removeList = document.querySelector('#apaga-tudo');
+removeList.addEventListener('click', apagarTudo);
+
+function apagarTudo() {
+  const removeTask = document.querySelectorAll('.task');
+  for (let index = 0; index < removeTask.length; index += 1) {
+    removeTask[index].remove();
+  }
+}
+
