@@ -61,3 +61,12 @@ function apagarTudo() {
   }
 }
 
+const removeCompleted = document.querySelector('#remover-finalizados');
+removeCompleted.addEventListener('click', removeTaskCompleted);
+
+function removeTaskCompleted() {
+  const rmCompletedTask = document.querySelectorAll('.completed');
+  for (let index = 0; index < rmCompletedTask.length; index += 1) {
+    rmCompletedTask[index].remove();
+  }
+}
