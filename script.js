@@ -70,3 +70,4 @@ function removeTaskCompleted() {
     rmCompletedTask[index].remove();
   }
 }
+removeTaskCompleted();
