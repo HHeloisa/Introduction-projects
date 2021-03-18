@@ -18,6 +18,7 @@ button {
   background-color: purple;
   width: 180px;
   height: 45px;
+  font-weight: bold;
 }
 
 input {
@@ -39,14 +40,20 @@ input {
 }
 
 .selected {
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(128 , 128 , 128);
 }
-
+ol {
+  font-size: x-large;
+}
 li {
   font-size: x-large;
 }
 
 .completed {
-  text-decoration:line-through solid rgb(0, 0, 0);
-  color:purple;
+  text-decoration: line-through solid rgb(0 , 0 , 0);
+  color: purple;
+}
+
+.bigButton {
+  height: 55px;
 }

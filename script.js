@@ -61,8 +61,7 @@ function apagarTudo() {
   }
 }
 
-const removeCompleted = document.querySelector('#remover-finalizados');
-removeCompleted.addEventListener('click', removeTaskCompleted);
+
 
 function removeTaskCompleted() {
   const rmCompletedTask = document.querySelectorAll('.completed');
@@ -70,4 +69,5 @@ function removeTaskCompleted() {
     listeningToOl.removeChild(rmCompletedTask[index]);
   }
 }
-removeTaskCompleted();
+const removeCompleted = document.querySelector('#remover-finalizados');
+removeCompleted.addEventListener('click', removeTaskCompleted);
