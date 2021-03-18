@@ -8,7 +8,7 @@ h1 {
   text-align: center;
   color: gray;
   text-decoration-line: underline;
- }
+}
 
 button {
   font-size: 20px;
@@ -29,6 +29,7 @@ input {
   color: purple;
   font-size: x-large;
 }
+
 #texto-tarefa {
   text-align: center;
   width: 500px;
@@ -42,9 +43,11 @@ input {
 .selected {
   background-color: rgb(128 , 128 , 128);
 }
+
 ol {
   font-size: x-large;
 }
+
 li {
   font-size: x-large;
 }

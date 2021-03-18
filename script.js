@@ -60,9 +60,8 @@ function apagarTudo() {
     removeTask[index].remove();
   }
 }
-
-
-
+// Agradecimentos a Nathi Zebral que tentou ajudar a resolver o problema
+// Agracimentos ao Anderson Nascimento que junto comigo resolveu o problema, descrito ao final do codigo.
 function removeTaskCompleted() {
   const rmCompletedTask = document.querySelectorAll('.completed');
   for (let index = 0; index < rmCompletedTask.length; index += 1) {
