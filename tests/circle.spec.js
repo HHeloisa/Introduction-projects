@@ -22,6 +22,8 @@ const circle = require('../src/circle');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+// Referência: https://www.w3schools.com/nodejs/met_assert_deepstrictequal.asp;
+// Referência 2: https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/Basics;
 
 describe('#circle', () => {
   it('given a radius, should return an object with circles info', () => {
@@ -37,6 +39,9 @@ describe('#circle', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(parseFloat((circle(3).area.toPrecision(2)), 28.26));
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.strictEqual(Object.values(circle(3)), (3, 28.26, 18.84));
+    const testCircle = circle(3);
+    testCircle.area = parseFloat((testCircle.area).toFixed(2));
+    testCircle.circumference = parseFloat((testCircle.circumference).toFixed(2));
+    assert.deepStrictEqual(testCircle, { radius: 3, area: 28.26, circumference: 18.84 });
   });
 });
