@@ -1,4 +1,3 @@
-
 // Referência: https://www.w3schools.com/jsref/jsref_floor.asp;
 
 const add = (num1, num2) => Math.floor(num1 + num2);
