@@ -17,5 +17,4 @@
 
 const createStudent = (name) => ({ nome: name, feedback: 'Eita pessoa boa!' });
 
-console.log(createStudent('Heloisa'));
 module.exports = createStudent;
