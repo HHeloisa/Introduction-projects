@@ -1,5 +1,3 @@
-/* window.onload = function onload() { };
-
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -26,11 +24,11 @@ function createProductItemElement({ sku, name, image }) {
   return section;
 }
 
-function getSkuFromProductItem(item) {
+/* function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
-}
+} */
 
-function cartItemClickListener(event) {
+/* function cartItemClickListener(event) {
   // coloque seu código aqui
 }
 
@@ -40,5 +38,28 @@ function createCartItemElement({ sku, name, salePrice }) {
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
   return li;
-}
- */
+} */
+
+// Requisito 1
+  // trazer as informações do mercado libre pra ca
+  // transformar o monte de infos e pegar o json
+  // pegar os resultados
+  // avisar a nossa casa que fermento quimico é royal
+  // jogar o produto para a função createProductItemElement
+
+  const productList = () => {
+    fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
+      .then((response) => response.json())
+      .then((data) => data.results)
+      .then((products) => {
+        products.forEach((product) => {
+          const { id: sku, title: name, thumbnail: image } = product;
+          createProductItemElement({ sku, name, image });
+        });
+      })
+      .catch((error) => console.log(error));
+  };
+
+window.onload = function onload() { 
+  productList();
+};
