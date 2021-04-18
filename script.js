@@ -22,33 +22,32 @@ function createCartItemElement({ sku, name, salePrice }) {
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
 
-  // li.addEventListener('click', cartItemClickListener);
+  //li.addEventListener('click', cartItemClickListener);
   return li;
 }
-
-// Requisito 2
-// função que faz nova requisição conforme ID
-const cartItemFunc = async (getIdItem) => {
-const doFetch = await fetch(`https://api.mercadolibre.com/items/${getIdItem}`);
-const data = await doFetch.json();
-const specificProductData = data;
-const specificData = {
-  sku: specificProductData.id,
-  name: specificProductData.title,
-  salePrice: specificProductData.price,
-};
-document.querySelector('.cart__items').appendChild(createCartItemElement(specificData));
-};
 
 function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
+// Requisito 2 //
+const cartItemFunc = () => {
+  const locListCart = document.querySelector('.cart__items');
+  const locSectionItems = document.querySelector('.items');
+  locSectionItems.addEventListener('click', async (e) => {
+    const getIdItem = getSkuFromProductItem(e.target.parentElement);
+    const doFetch = await fetch(`https://api.mercadolibre.com/items/${getIdItem}`);
+    const data = await doFetch.json();
+    const { id: sku, title: name, price: salePrice } = data;
+    locListCart.appendChild(createCartItemElement({ sku, name, salePrice }));
+  });
+};
+
+// Requisito 2 // Parte 1
 // Insere escutador aos botoes "Adicionar ao carrinho"
   // criar variavel que armazena todos os botoes
-const allButonsAddCart = document.querySelectorAll('.item__add');
   // inserir a cada botão o addEventListner
-  const liteningToAllButtuns = () => {
+/*   const liteningToAllButtuns = () => {
     allButonsAddCart.forEach((button) => {
       button.addEventListener('click', (e) => {
         // identificar o id do botão de origem do evento
@@ -59,7 +58,7 @@ const allButonsAddCart = document.querySelectorAll('.item__add');
       });
     });
   };
-
+ */
   function createProductItemElement({ sku, name, image }) {
     const section = document.createElement('section');
     section.className = 'item';
@@ -80,7 +79,7 @@ const allButonsAddCart = document.querySelectorAll('.item__add');
       const { id: sku, title: name, thumbnail: image } = product;
       createProductItemElement({ sku, name, image });
     });
-    liteningToAllButtuns();
+    // liteningToAllButtuns();
   };
 
     // Requisito 1 // Parte 1
@@ -96,6 +95,6 @@ const allButonsAddCart = document.querySelectorAll('.item__add');
 
 window.onload = function onload() { 
   productList();
-  liteningToAllButtuns();
-  // cartItemFunc();
+  // liteningToAllButtuns();
+  cartItemFunc();
 };
