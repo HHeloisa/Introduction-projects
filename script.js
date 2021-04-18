@@ -12,17 +12,16 @@ function createCustomElement(element, className, innerText) {
   return e;
 }
 
-/* function cartItemClickListener(event) {
-  // coloque seu código aqui
-}7
- */
+function cartItemClickListener(event) {
+  event.target.remove();
+}
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
 
-  // li.addEventListener('click', cartItemClickListener);
+  li.addEventListener('click', cartItemClickListener);
   return li;
 }
 
@@ -43,22 +42,6 @@ const cartItemFunc = () => {
   });
 };
 
-// Requisito 2 // Parte 1
-// Insere escutador aos botoes "Adicionar ao carrinho"
-  // criar variavel que armazena todos os botoes
-  // inserir a cada botão o addEventListner
-/*   const liteningToAllButtuns = () => {
-    allButonsAddCart.forEach((button) => {
-      button.addEventListener('click', (e) => {
-        // identificar o id do botão de origem do evento
-        const event = e.target.parentElement;
-        const getIdItem = getSkuFromProductItem(event);
-        // enviar para função que envia para o carrinho
-        cartItemFunc(getIdItem);
-      });
-    });
-  };
- */
   function createProductItemElement({ sku, name, image }) {
     const section = document.createElement('section');
     section.className = 'item';
@@ -83,7 +66,7 @@ const cartItemFunc = () => {
   };
 
     // Requisito 1 // Parte 1
-  function productList() {
+  async function productList() {
     return fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
       .then((response) => {
         response.json().then((data) => {
