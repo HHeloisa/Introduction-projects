@@ -3,11 +3,16 @@ const fetchMyCartContainer = () => document.querySelector('ol.cart__items');
 
 const saveCart = () => {
   const cartItemsContent = fetchMyCartContainer();
+  if (cartItemsContent !== null) {
   localStorage.setItem('shopCart', cartItemsContent.innerHTML);
+  }
 };
 const recoverCart = () => {
+  const myShopCart = localStorage.getItem('shopCart');
+  if (myShopCart !== null) {
   const meuCarrinhoDeCompras = fetchMyCartContainer();
   meuCarrinhoDeCompras.innerHTML = localStorage.getItem('shopCart');
+  }
 };
 
 // Cria imagem do produto
@@ -54,8 +59,8 @@ const cartItemFunc = () => {
     const data = await doFetch.json();
     const { id: sku, title: name, price: salePrice } = data;
     locListCart.appendChild(createCartItemElement({ sku, name, salePrice }));
+    saveCart();
   });
-  saveCart();
 };
 
 function createProductItemElement({ sku, name, image }) {
