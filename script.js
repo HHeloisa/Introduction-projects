@@ -31,6 +31,21 @@ const funClearCartButton = () => {
   clearAllCart.addEventListener('click', clearCart);
 };
 
+// Requisito 7 - Colocar loading durante a api - ter a classe loading.
+const insertLoading = () => {
+  const newDiv = document.createElement('div');
+  newDiv.className = 'loading';
+  newDiv.innerHTML = 'loading';
+  const theContainer = document.querySelector('.items');
+  theContainer.appendChild(newDiv);
+};
+
+// Requisito 7 - parte 2 - remover loading
+const removeLoading = () => {
+  const divLoading = document.querySelector('.loading');
+  divLoading.remove();
+};
+
 // Cria imagem do produto
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -70,10 +85,12 @@ const cartItemFunc = () => {
   const locListCart = document.querySelector('.cart__items');
   const locSectionItems = document.querySelector('.items');
   locSectionItems.addEventListener('click', async (e) => {
+    insertLoading();
     const getIdItem = getSkuFromProductItem(e.target.parentElement);
     const doFetch = await fetch(`https://api.mercadolibre.com/items/${getIdItem}`);
     const data = await doFetch.json();
     const { id: sku, title: name, price: salePrice } = data;
+    removeLoading();
     locListCart.appendChild(createCartItemElement({ sku, name, salePrice }));
     saveCart();
   });
@@ -93,6 +110,7 @@ function createProductItemElement({ sku, name, image }) {
 
   // Requisito 1 // Parte 2
   const insertAllProducts = (allProducts) => {
+    removeLoading();
     allProducts.forEach((product) => {
       const { id: sku, title: name, thumbnail: image } = product;
       createProductItemElement({ sku, name, image });
@@ -100,6 +118,7 @@ function createProductItemElement({ sku, name, image }) {
   };
     // Requisito 1 // Parte 1
   async function productList() {
+    insertLoading();
     return fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
       .then((response) => {
         response.json().then((data) => {
