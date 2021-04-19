@@ -21,7 +21,7 @@ const clearCart = () => {
   if (eachProduct !== null) {
       eachProduct.forEach((product) => product.remove());
       saveCart();
-    } else {
+    } if (eachProduct.length === 0) {
       alert('Não é possível remover produtos do carrinho se não há produtos no carrinho.');
     }
 };
