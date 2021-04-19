@@ -15,6 +15,22 @@ const recoverCart = () => {
   }
 };
 
+// Requisito 6 - Crie um botão para limpar carrinho de compras
+const clearCart = () => {
+  const eachProduct = document.querySelectorAll('.cart__item');
+  if (eachProduct !== null) {
+      eachProduct.forEach((product) => product.remove());
+      saveCart();
+    } else {
+      alert('Não é possível remover produtos do carrinho se não há produtos no carrinho.');
+    }
+};
+
+const funClearCartButton = () => {
+  const clearAllCart = document.querySelector('.empty-cart');
+  clearAllCart.addEventListener('click', clearCart);
+};
+
 // Cria imagem do produto
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -97,6 +113,7 @@ window.onload = function onload() {
   productList();
   cartItemFunc();
   recoverCart();
+  funClearCartButton();
 };
 
 /* Referências:
