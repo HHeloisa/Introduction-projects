@@ -21,9 +21,17 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+// Referencias: https://app.betrybe.com/course/fundamentals/testes-automatizados-com-jest/jest-simulando-comportamentos/4783a3a1-485b-4712-a293-b645c2f7ac40/conteudos/5f13b72b-17e9-4348-905b-582dc584a4e0/mock-e-funcoes-assincronas/b5567964-cfa3-4848-9442-4ab4f355ac3f?use_case=previous_button
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  const minhaMock = {
+    gender: 'male',
+    name: { first: 'Antônio', last: 'Britto' },
+    location: { country: 'Brazil' },
+    email: 'tunico@bol.com.br',
+    login: { username: 'tunicao123', password: '1234567890' },
+  };
+  api.fetchURL = jest.fn().mockResolvedValue(minhaMock);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
