@@ -8,18 +8,39 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<header>
-<h1 id="title">Paleta de Cores</h1>
-</header>
-<br>
-<section>
-  <div id='color-palette'></div>
-</section>
-<button id="clear-board">Limpar</button>
-<br>
-<section id='board'>
-</section>
-<br>
-<script type='text/javascript' src='script.js'></script>
+  <header>
+  <h1 id="title">Paleta de Cores</h1>
+  </header>
+
+  <br>
+  <section id="flex">
+    <div id='config'>
+      <h2>Defina o tamanho do quadro:</h2>
+      <input type=number id="inputNumber"/>
+      <button id="buttonInputNumber">Definir tamanho</button>
+    </div>
+    <div id="newColor">
+      <p>Insira um valor de cor para criar uma cor específica na paleta. Exemplo: f5cac3</p>
+      <input type=text id="inputHexaColor">
+      <button id="buttonNewColor">Adicionar cor</button>
+    </div>
+    <div id='color-palette'></div>
+  </section>
+
+  <br>
+  <section id='board'>
+  </section>
+  <div id="clear-board">
+  <button>Limpar o quadro</button>
+  </div>
+
+  <br>
+  <footer>
+    <div>
+      <p>Este projeto foi desenvolvido durante o curso de Desenvolvimento WEB da Trybe.</p>
+    </div>
+  </footer>
+
+  <script type='text/javascript' src='script.js'></script>
 </body>
 </html>
