@@ -10,7 +10,7 @@ Brevemente, trago um sumário dos projetos e um pouco do que aprendidas com eles
   JavaScript - DOM, eventos e Local Storage. <BR>
   
 3 – Playground Functions;<BR>
-	JavaScript - Funções e lógica de programação.<BR>
+	JavaScript - Funções, HOFs, e lógica de programação.<BR>
   
 4 – Shooping Cart;<BR>
 	JavaScript - Funções.<BR>
