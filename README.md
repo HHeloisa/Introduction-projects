@@ -1,4 +1,4 @@
-# Boas vindas ao repositório dos projetos Inicias!
+# Boas vindas ao repositório dos projetos inicias!
 Este repositório armazena, em cada branch, diferentes projetos desenvolvidos para a Trybe, durante estudos e práticas dos fundamentos do Desenvolvimento WEB.
 Cada branch possui seu próprio README com uma apresentação do Projeto, os requisitos a serem cumpridos no projeto, bem como como acessar e testar o código.<BR>
 Brevemente, trago um sumário dos projetos e um pouco do que aprendidas com eles.
